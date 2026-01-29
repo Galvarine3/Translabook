@@ -5,10 +5,10 @@ services:
     env: static
     buildCommand: "echo 'No build required'"
     staticPublishPath: .
-    publishPath: privacy-policy.html
+    publishPath: index.html
     routes:
-      - type: redirect
-        source: /
+      - type: rewrite
+        source: /*
         destination: /privacy-policy.html
     envVars:
       - key: NODE_VERSION
