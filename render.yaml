@@ -1,0 +1,25 @@
+services:
+  # Servicio de sitio estático para la política de privacidad
+  - type: web
+    name: translabook-privacy
+    env: static
+    buildCommand: "echo 'No build required'"
+    staticPublishPath: .
+    publishPath: privacy-policy.html
+    routes:
+      - type: redirect
+        source: /
+        destination: /privacy-policy.html
+    envVars:
+      - key: NODE_VERSION
+        value: "18"
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
