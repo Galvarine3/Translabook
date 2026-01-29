@@ -1,0 +1,22 @@
+# No ignorar archivos HTML o CSS ya que son necesarios para el sitio estático
+# Solo ignorar archivos temporales o de desarrollo
+
+# Logs
+*.log
+
+# Archivos temporales
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules (si se usa para build tools)
+node_modules/
+
+# Build outputs (si se usan)
+dist/
+build/
